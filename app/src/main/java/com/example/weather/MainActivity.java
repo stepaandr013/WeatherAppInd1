@@ -73,9 +73,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Intent mIntent=getIntent();
-        String city= mIntent.getStringExtra("City");
-        if(city!=null)
+        Intent mIntent = getIntent();
+        String city = mIntent.getStringExtra("City");
+        if(city != null)
         {
             getWeatherForNewCity(city);
         }
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void getWeatherForNewCity(String city)
     {
-        RequestParams params=new RequestParams();
+        RequestParams params = new RequestParams();
         params.put("q",city);
         params.put("appid",APP_ID);
         letsdoSomeNetworking(params);
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(requestCode==REQUEST_CODE)
         {
-            if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED)
+            if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
             {
                 Toast.makeText(MainActivity.this,"Locationget Succesffully",Toast.LENGTH_SHORT).show();
                 getWeatherForCurrentLocation();
@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        if(mLocationManager!=null)
+        if(mLocationManager != null)
         {
             mLocationManager.removeUpdates(mLocationListner);
         }
