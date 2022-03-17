@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 String Latitude = String.valueOf(location.getLatitude());
                 String Longitude = String.valueOf(location.getLongitude());
 
-                RequestParams params =new RequestParams();
+                RequestParams params = new RequestParams();
                 params.put("lat" ,Latitude);
                 params.put("lon",Longitude);
                 params.put("appid",APP_ID);
@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this,"Data Get Success",Toast.LENGTH_SHORT).show();
 
-                weatherData weatherD=weatherData.fromJson(response);
+                weatherData weatherD = weatherData.fromJson(response);
                 updateUI(weatherD);
 
 
